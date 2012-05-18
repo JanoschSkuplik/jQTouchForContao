@@ -1,0 +1,18 @@
+<?php if (!$this->tableless): ?>
+  <tr class="<?php echo $this->rowClass; ?>">
+    <td class="col_0 col_first">&nbsp;</td>
+    <td class="col_1 col_last"><div class="submit_container"><?php echo $this->generate(); ?></div></td>
+  </tr>
+<?php elseif ($this->jqt_listitem): ?>
+  <li class="submit_container">
+  	
+  	<a href="#" class="submit<?php echo (strlen($this->strClass) ? ' ' . $this->strClass : '')?>"><?php echo $this->slabel; ?></a>
+     
+  </li>
+<?php else: ?>
+<div class="submit_container">
+  	
+  	<a href="#" class="submit<?php echo (strlen($this->strClass) ? ' ' . $this->strClass : '')?>"><?php echo $this->slabel; ?></a>
+     
+  </div>
+<?php endif; ?>

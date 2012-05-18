@@ -1,0 +1,58 @@
+<?php if (!$this->tableless): ?>
+  <tr class="<?php echo $this->rowClass; ?>">
+    <td class="col_0 col_first">&nbsp;</td>
+    <td class="col_1 col_last"><div class="button_container"><?php echo $this->generate(); ?></div></td>
+  </tr>
+<?php elseif ($this->jqt_listitem): ?>
+<li>
+  <?php echo $this->generateLabel(); ?> 
+  <?php echo $this->generateWithError(); ?></li>
+<?php else: ?>
+  <?php echo $this->generateLabel(); ?> 
+  <?php echo $this->generateWithError(); ?><br>
+<?php endif; ?>
+
+
+<script type="text/javascript" charset="utf-8">
+	
+	function currentLookup(input,inputLat,inputLng) {
+		jQT.updateLocation(function(coords){
+			$('input[name=' + input + ']').bind('change',function(){
+				$('input[name=' + inputLat + ']').val('');
+                $('input[name=' + inputLng + ']').val('');
+			});
+        	if (coords) {
+            	console.log(coords);
+            	$('input[name=' + inputLat + ']').val(coords.latitude);
+                $('input[name=' + inputLng + ']').val(coords.longitude);
+            	$.ajax({
+                    url: 'ajax.php',
+                    data: {
+                    	lat: 	coords.latitude,
+                    	lng: 	coords.longitude,
+                    	action: 'dma',
+                    	type: 	'getAddress'
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                    	console.log(typeof(data['content']));
+                    	if (typeof(data['content'])!="string" && data['content']['results']['0']['formatted_address']) {
+                    		$('input[name=' + input + ']').val(data['content']['results']['0']['formatted_address']);
+                    	} else {
+                    		jQT.alert('Ihre Adresse konnte leider nicht bestimmt werden.');
+                    		$('input[name=' + input + ']').val(coords.latitude + ', ' + coords.longitude);
+                    	}
+                    },
+                    error: function (data) {
+						jQT.alert('Ihre Adresse konnte leider nicht bestimmt werden.');
+                    	$('input[name=' + input + ']').val(coords.latitude + ', ' + coords.longitude);
+                    }
+                });
+
+            } else {
+                jQT.alert('Leider unterstützt Ihr Gerät keine Lokalisierung.');
+             }
+         });
+	}
+	
+</script>

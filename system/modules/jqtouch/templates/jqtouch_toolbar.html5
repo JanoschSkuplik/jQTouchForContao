@@ -1,0 +1,11 @@
+<div class="toolbar">
+<?php if ($this->addTitle): ?>
+<h1><?php echo $this->title; ?></h1>
+<?php endif; ?>
+<?php if ($this->addBackBtn): ?>
+	<a href="#" class="back">Zurück</a>
+<?php endif; ?>
+<?php if ($this->addRightBtn): ?>
+	<?php echo $this->rightBtnHtml; ?>
+<?php endif; ?>
+</div>

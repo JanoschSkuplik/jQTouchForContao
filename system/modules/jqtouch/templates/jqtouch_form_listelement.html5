@@ -1,0 +1,14 @@
+<?php if (!$this->tableless): ?>
+
+<?php else: ?>
+
+<?php if ($this->isStarter): ?>
+	<ul>
+<?php elseif ($this->isCloser): ?>
+	</ul>
+<?php else: ?>
+	</ul>
+	<ul>
+<?php endif; ?>	
+
+<?php endif; ?>
