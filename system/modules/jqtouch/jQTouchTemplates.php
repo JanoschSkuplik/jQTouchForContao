@@ -37,28 +37,29 @@ class jQTouchTemplates extends Controller {
 	public function jQTouchParseTemplate($objTemplate) {
 		// read template name 
 		
-		
-		global $objPage;
-		$objLayout = $this->getPageLayout($objPage->layout);
-		
-		if ($objLayout->jqt_useJQTouch)
+		if (TL_MODE=='FE')
 		{
-			$strTemplateName = $objTemplate->getName(); 		
-			switch ($strTemplateName)
+			global $objPage;
+			$objLayout = $this->getPageLayout($objPage->layout);
+		
+			if ($objLayout->jqt_useJQTouch)
 			{
+				$strTemplateName = $objTemplate->getName(); 		
+				switch ($strTemplateName)
+				{
 
-				case 'mod_article':
-					$objTemplate->setName('jqtouch_mod_article');
-					break;
-				case 'form':
-					//$objTemplate->setName('jqtouch_form');
-					break;
-				case 'form_widget':
-					$objTemplate->setName('jqtouch_form_widget');
-					break;
+					case 'mod_article':
+						$objTemplate->setName('jqtouch_mod_article');
+						break;
+					case 'form':
+						//$objTemplate->setName('jqtouch_form');
+						break;
+					case 'form_widget':
+						$objTemplate->setName('jqtouch_form_widget');
+						break;
+				}
 			}
 		}
-		
 	}
 	
 
