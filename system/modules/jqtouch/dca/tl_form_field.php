@@ -34,11 +34,6 @@
  */
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['jqt_lookupLocation'] = '{type_legend},type,slabel;{fconfig_legend},jqt_locationInput,jqt_locationInputLat,jqt_locationInputLng;{expert_legend:hide},class';
 
-foreach ($GLOBALS['TL_DCA']['tl_form_field']['palettes'] as $key=>$palette)
-{
-	$GLOBALS['TL_DCA']['tl_form_field']['palettes'][$key] = str_replace(',type',',type,jqt_listitem',$GLOBALS['TL_DCA']['tl_form_field']['palettes'][$key]);
-}
-
 
 
 
@@ -64,13 +59,6 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['jqt_locationInputLng'] = array(
 	'eval'                    => array('tl_class'=>'w50', 'includeBlankOption'=>true)
 );
 
-$GLOBALS['TL_DCA']['tl_form_field']['fields']['type']['eval']['tl_class'] = 'w50';
-$GLOBALS['TL_DCA']['tl_form_field']['fields']['jqt_listitem'] = array(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_form_field']['jqt_listitem'],
-	'exclude'                 => true,
-	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12')
-);
 
 
 class tl_form_field_jqtouch extends Backend

@@ -3,7 +3,7 @@
 <h1><?php echo $this->title; ?></h1>
 <?php endif; ?>
 <?php if ($this->addBackBtn): ?>
-	<a href="#" class="back">Zurück</a>
+	<a href="#" class="back"><?php echo $this->backHtml; ?></a>
 <?php endif; ?>
 <?php if ($this->addRightBtn): ?>
 	<?php echo $this->rightBtnHtml; ?>

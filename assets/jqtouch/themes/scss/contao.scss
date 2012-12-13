@@ -1,0 +1,168 @@
+$base-color: #E4790F;
+$page-background-color: #CBD2D8;
+$highlight-color: $base-color;
+
+$list-background-color: #fff;
+
+$toolbar-background-color: $base-color;
+$toolbar-button-color: saturate(darken($base-color, 10), 10);
+
+@import 'include/core';
+
+#jqt {
+    > * {
+        background: #ddd;
+    }
+    
+    a{
+        color:#e4790f;
+    }
+    .toolbar {
+        @include background-image(
+            linear-gradient(rgba(#fff, .15), rgba(#fff, 0)),
+            glossy-gradient($toolbar-background-color, $contrast: .6)
+        );
+        @include box-shadow(rgba(#fff, .3) 0 1px 0 inset);
+        
+        & > h1 {
+           color: #fff;
+           width:170px;
+           margin: 1px 0 0 -85px;
+           @include text-shadow(rgba(#000, .8) 0 -1px 0);
+           line-height:26px;
+           bottom:9px;
+        }
+    }
+
+    ul {
+
+        li {
+            input[type="checkbox"], input[type="radio"] {
+                color: rgb(50,79,133);
+            }
+            fieldset {
+                border:none;
+            }
+            &.forward {
+                &:before { 
+                    @include background-gradient($base-color, glossy);
+                }
+                &:after {
+                    color: #fff;
+                    @include text-shadow(rgba(#000, .8) 0 -1px 0);
+                    height:30px;
+                    line-height:30px;
+                    top:50%;
+                    margin-top:-17px;
+                }
+            }
+            span.title {
+                display:inline-block;
+                width:250px;
+                overflow:hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                @include color-by-background($page-background-color, 40);
+            }
+        }
+
+        .toggle input[type="checkbox"] {
+            background: transparent url(../img/apple/on_off.png) 0 0 no-repeat;
+        }
+
+        input[type='submit'] {
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,238,1)), to(rgba(156,158,160,1)));
+            border: 1px outset #aaa;
+        }
+
+        // Edge to edge
+        &.edgetoedge li.sep {
+            @include background-gradient($page-background-color, recessed);
+            @include color-by-background($page-background-color);
+            border-bottom: 1px solid #b5c1c9;
+            border-top: 1px solid #b5c1c9;
+        }
+    }
+
+    ul.edgetoedge li, .metal li {
+        @include border-radius(0);
+    }
+
+    ul.edgetoedge li em {
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    ul.metal li {
+        border-top: 1px solid rgb(238,238,238);
+        border-bottom: 1px solid rgb(156,158,165);
+        font-size: 26px;
+        text-shadow: #fff 0 1px 0;
+
+        a:hover {
+            color: #000;
+        }
+        em {
+            color: #444;
+        }
+    }
+    .button, .back, .cancel, .add {
+        border: 1px solid darken($toolbar-button-color, 20);
+    }
+    .info {
+        background: #dce1eb;
+        text-shadow: rgba(255,255,255,.8) 0 1px 0;
+        color: rgb(76, 86, 108);
+        border-top: 1px solid rgba(76, 86, 108, .3);
+    }
+}
+
+
+// special styles for contao
+.invisible {
+  display:none;
+}
+#jqt .pagination{
+  p{
+    text-align:center;
+    margin-top:10px;
+  }
+  ul{
+    margin-top:5px;
+     margin-bottom:10px;
+    li{
+      padding:0;
+      display:none;
+      &.previous{
+        display:block;
+        width:50%;
+        float:left;
+      }
+      &.next{
+        display:block;
+        width:50%;
+        float:right;
+        text-align:right;
+      }
+    }
+  }
+}
+
+
+// special for android
+
+body.android{
+  #jqt{
+    .back{
+      display:none;
+      padding-left:10px;
+      margin-left:10px;
+      &:after{
+        display:none;
+      }
+      &:before{
+        display:none;
+      }
+    }
+  }
+}

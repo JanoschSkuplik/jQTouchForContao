@@ -43,7 +43,7 @@ $GLOBALS['TL_DCA']['tl_article']['palettes']['__selector__'][] =  'jqt_toolbarTi
 $GLOBALS['TL_DCA']['tl_article']['palettes']['__selector__'][] =  'jqt_toolbarRightBtn';
 
 
-$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace(';{expert_legend',';{jqt_legend},jqt_toolbar;{expert_legend',$GLOBALS['TL_DCA']['tl_article']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace(';{expert_legend',';{jqt_legend},jqt_toolbar,jqt_nocache;{expert_legend',$GLOBALS['TL_DCA']['tl_article']['palettes']['default']);
 
 
 $GLOBALS['TL_DCA']['tl_article']['subpalettes']['jqt_toolbar'] = 'jqt_toolbarBackBtn,jqt_toolbarTitle,jqt_toolbarRightBtn';
@@ -54,7 +54,13 @@ $GLOBALS['TL_DCA']['tl_article']['subpalettes']['jqt_toolbarRightBtn'] = 'jqt_to
 /**
  * fields
  */
- 
+
+$GLOBALS['TL_DCA']['tl_article']['fields']['jqt_nocache'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_article']['jqt_nocache'],
+	'exclude'                 => true,
+	'inputType'               => 'checkbox',
+	'eval'                    => array('tl_class'=>'clr w50 m12')
+);
 $GLOBALS['TL_DCA']['tl_article']['fields']['jqt_toolbar'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_article']['jqt_toolbar'],
 	'exclude'                 => true,

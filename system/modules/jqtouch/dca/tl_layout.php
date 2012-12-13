@@ -45,7 +45,7 @@ $GLOBALS['TL_DCA']['tl_layout']['palettes']['__selector__'][] =  'jqt_showPrevie
 $GLOBALS['TL_DCA']['tl_layout']['palettes']['default'] = str_replace(';{expert_legend',';{jqt_legend},jqt_useJQTouch;{expert_legend',$GLOBALS['TL_DCA']['tl_layout']['palettes']['default']);
 
 $GLOBALS['TL_DCA']['tl_layout']['subpalettes']['jqt_useJQTouch'] = 'jqt_layoutType';
-$GLOBALS['TL_DCA']['tl_layout']['subpalettes']['jqt_layoutType_loadFramework'] = 'jqt_showPreview,jqt_homeIcon,jqt_moreVariables,jqt_theme,jqt_framework,jqt_extensions';
+$GLOBALS['TL_DCA']['tl_layout']['subpalettes']['jqt_layoutType'] = 'jqt_showPreview,jqt_homeIcon,jqt_moreVariables,jqt_theme,jqt_framework,jqt_extensions';
 $GLOBALS['TL_DCA']['tl_layout']['subpalettes']['jqt_showPreview'] = 'jqt_previewImage,jqt_previewSize';
 
 
@@ -57,15 +57,14 @@ $GLOBALS['TL_DCA']['tl_layout']['fields']['jqt_useJQTouch'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_layout']['jqt_useJQTouch'],
 	'exclude'                 => true,
 	'inputType'               => 'checkbox',
-	'eval'                    => array('submitOnChange'=>true)
+	'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'w50')
 );
 
 $GLOBALS['TL_DCA']['tl_layout']['fields']['jqt_layoutType'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_layout']['jqt_layoutType'],
 	'exclude'                 => true,
-	'inputType'               => 'select',
-	'options'				  => array('loadFramework','request'),
-	'eval'                    => array('submitOnChange'=>true)
+	'inputType'               => 'checkbox',
+	'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'w50')
 );
 
 $GLOBALS['TL_DCA']['tl_layout']['fields']['jqt_homeIcon'] = array(

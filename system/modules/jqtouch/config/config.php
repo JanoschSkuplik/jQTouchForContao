@@ -51,7 +51,7 @@ $GLOBALS['TL_HOOKS']['parseTemplate'][] = array('jQTouchTemplates', 'jQTouchPars
 
 $GLOBALS['TL_HOOKS']['loadFormField'][] = array('jQTouchWidget', 'jQTouchLoadWidget');
 $GLOBALS['TL_HOOKS']['dispatchAjax'][] = array('jQTouchAjax', 'jQTouchExtendAjax');
-
+$GLOBALS['TL_HOOKS']['processFormData'][] = array('jQTouchWidget','jQTouchProcessFormData');
 
 /**
  * Add permissions
@@ -66,7 +66,7 @@ $GLOBALS['TL_FFL']['jqt_lookupLocation'] = 'jQTouchFormLookupLocation';
 /**
  * Global Vars
  */
-$GLOBALS['JQT']['THEMEFOLDER'] = 'plugins/jqtouch/themes/';
-$GLOBALS['JQT']['EXTENSIONFOLDER'] = 'plugins/jqtouch/extensions/';
+$GLOBALS['JQT']['THEMEFOLDER'] = 'assets/jqtouch/themes/';
+$GLOBALS['JQT']['EXTENSIONFOLDER'] = 'assets/jqtouch/extensions/';
 
 ?>

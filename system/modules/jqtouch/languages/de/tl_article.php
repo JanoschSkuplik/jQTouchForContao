@@ -44,5 +44,6 @@ $GLOBALS['TL_LANG']['tl_article']['jqt_toolbarRightBtn'] = array('jQTouch: recht
 $GLOBALS['TL_LANG']['tl_article']['jqt_toolbarRightBtnHtml'] = array('jQTouch: html für den rechten Button','Hier können Sie für den rechten Button individuellen html-Code eingeben.');
 $GLOBALS['TL_LANG']['tl_article']['jqt_toolbarBackBtnText'] = array('jQTouch: zurück-Button-Text','Hier können Sie den Text für den zurück-Button überschreiben. Standardmäßig wird „zurück“ verwendet.');
 $GLOBALS['TL_LANG']['tl_article']['jqt_toolbarTitleText'] = array('jQTouch: Toolbar-Titel','Hier können Sie einen Seitentitel für die Toolbar eingeben. Sollten Sie keinen individuellen Titel vergeben, so wird der Artikel-Titel verwendet.');
+$GLOBALS['TL_LANG']['tl_article']['jqt_nocache'] = array('jQTouch: Seite nicht cachen','Sie können den jQTouch-internen Cache für diese Seiten umgehen. Dies macht insbesondere für Seiten Sinn, in denen Formulare eingebunden sind.');
 
 ?>

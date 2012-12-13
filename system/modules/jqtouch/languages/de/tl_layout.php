@@ -37,7 +37,7 @@
 $GLOBALS['TL_LANG']['tl_layout']['jqt_legend'] = 'jQTouch';
 
 $GLOBALS['TL_LANG']['tl_layout']['jqt_useJQTouch'] = array('jQTouch verwenden','soll jQTouch für dieses Layout verwendet werden');
-$GLOBALS['TL_LANG']['tl_layout']['jqt_layoutType'] = array('jQTouch - Loading-Tpye','soll das komplette Frameset geladen werden, oder handelt es sich um das Layout für die AJAX-Requests (Unterseiten)');
+$GLOBALS['TL_LANG']['tl_layout']['jqt_layoutType'] = array('jQTouch - Framework laden und initialisieren','Für die Startseite der Webapp muss das komplette Framework geladen werden. Für Unterseiten, die asynchron nachgeladen werden, nicht.');
 $GLOBALS['TL_LANG']['tl_layout']['jqt_homeIcon'] = array('Bildquelle für das Home-Icon','');
 $GLOBALS['TL_LANG']['tl_layout']['jqt_showPreview'] = array('Start-Screen in der Fullsize-Ansicht verwenden','');
 $GLOBALS['TL_LANG']['tl_layout']['jqt_previewImage'] = array('Bildquelle für den Startscreen','');
